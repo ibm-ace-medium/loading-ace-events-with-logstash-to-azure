@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  logstash-server:
+    build:
+      context: /home/ivansla/Repositories/ibm-ace-medium/loading-ace-events-with-logstash-to-azure/logstash-server/
+    image: logstash-server
+    networks:
+      my-network:
+        ipv4_address: 192.1.1.11
+  integration-server:
+    build:
+      context: /home/ivansla/Repositories/ibm-ace-medium/loading-ace-events-with-logstash-to-azure/integration-server/
+    image: integration-server
+    networks:
+      my-network:
+        ipv4_address: 192.1.1.12
+networks:
+  my-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.1.1.0/24"
