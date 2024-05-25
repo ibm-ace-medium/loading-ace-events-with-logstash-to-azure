@@ -1,3 +1,4 @@
+# Feel free to use your own ACE Docke Image
 FROM ivansla/rhel-ubi-ace:latest
 
 # aceuser

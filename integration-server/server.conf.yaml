@@ -2,21 +2,21 @@
 ResourceManagers:
   JVM:
     jvmDebugPort: 9000
-Events:
-  BusinessEvents:    # Business monitoring events
-    File:
-      enabled: true       # Set true or false, default false
-      outputFormat: 'xml' # Set comma separated list of one or more of : json,xml. Defaults to 'json'
-    ELK:
-      enabled: true
-      outputFormat: 'json'      # Set json, default json
-      elkConnections: 'elkConnection1'
 Monitoring:
   MessageFlow:
     publicationOn: 'active'
+Events:
+  BusinessEvents:
+    File:
+      enabled: true
+      outputFormat: 'xml'
+    ELK:
+      enabled: true
+      outputFormat: 'json'
+      elkConnections: 'elkConnection1'
 ELKConnections:
   elkConnection1:
-    elkProtocol: 'beats'                       # Logstash input protocol. Valid values are: 'beats', 'beatsTls', 'http', or 'https'.
-    hostname: '192.1.1.11'              # Hostname for the elkProtocol endpoint.
-    port: 5044                                    # Port for the elkProtocol endpoint.
-    uploadIntervalMilliSecs: 10000             # Interval between uploading cached data, set in milliseconds.
+    elkProtocol: 'beats'
+    hostname: '192.1.1.11'
+    port: 5044
+    uploadIntervalMilliSecs: 10000

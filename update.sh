@@ -1,3 +1,5 @@
+sudo docker compose down
+
 . ~/Tools/ace-12.0.8.0/server/bin/mqsiprofile
 
 ibmint package --input-path ~/Repositories/ibm-ace-medium/loading-ace-events-with-logstash-to-azure/LoadingAceEventsWithLogstashToAzure \
